@@ -1,0 +1,42 @@
+﻿{
+    "Subscription": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+                     
+    "BastionResourceID": "/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/BastionTest/providers/Microsoft.Network/bastionHosts/mybastion",
+    "JumpServerResourceID": "/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/BastionTest/providers/Microsoft.Compute/virtualMachines/myjumpserver",
+    "JumpServerUser": "username",
+    "JumpServerKeyPath": "C:\\folder\\rsakey",
+    "Tunnels": [
+        {
+            "Description": "Example Jumpserver",
+            "Enabled": true,
+            "RemoteHost": "127.0.0.1",
+            "RemotePort": 22,
+            "LocalAggregatorPort": 20022,
+            "LocalPort": 10022
+        },
+        {
+            "Description": "Example MyAKS cluster",
+            "Enabled": true,
+            "RemoteHost": "myaks.privatelink.westeurope.azmk8s.io",
+            "RemotePort": 443,
+            "LocalAggregatorPort": 20443,
+            "LocalPort": 10443
+        },
+        {
+            "Description": "Example AnotherVM",
+            "Enabled": true,
+            "RemoteHost": "10.20.30.40",
+            "RemotePort": 22,
+            "LocalAggregatorPort": 20023,
+            "LocalPort": 10023
+        },
+        {
+            "Description": "Example Webpage",
+            "Enabled": true,
+            "RemoteHost": "10.50.60.70",
+            "RemotePort": 443,
+            "LocalAggregatorPort": 20444,
+            "LocalPort": 443
+        }
+    ]
+}
